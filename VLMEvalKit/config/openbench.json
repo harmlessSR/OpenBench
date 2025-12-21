@@ -1,0 +1,15 @@
+{
+    "model": {
+        "Qwen2.5-VL-3B-Instruct": {}
+    },
+    "data": {
+        "OpenBench": {
+            "class": "OpenBench",
+            "data_path": "./OpenBench_HF_Cache_full",
+            "dataset": "OpenBench",
+            "nframe": 32,
+            "download": true,
+            "force_unzip": false
+        }
+    }
+}
