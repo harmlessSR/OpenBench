@@ -2,7 +2,7 @@
 
 <h1><br>From Indoor to Open World:<br>Revealing the Spatial Reasoning Gap in MLLMs</br></h1>
 
-<a href="" target="_blank">
+<a href="https://arxiv.org/abs/2512.19683" target="_blank">
     <img alt="arXiv" src="https://img.shields.io/badge/arXiv-OpenBench-red?logo=arxiv" height="20" />
 </a>
 <a href="https://harmlesssr.github.io/openbench/" target="_blank">
@@ -43,6 +43,7 @@
 
 ## News
 
+- `2025-12` : Our paper 'From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs' is released on <a href="https://arxiv.org/abs/2512.19683">Arxiv</a>!
 - `2025-12` : We released OpenBench and corresponding evaluation code!
 
 ## OpenBench
@@ -136,10 +137,15 @@ The script will:
 For advanced usage (e.g., multi-GPU parallel evaluation, launching different models), please refer to the original [VLMEvalKit Documentation](https://github.com/open-compass/VLMEvalKit).
 
 ## Acknowledgement
-VLMEvalKit serves as foundation for our evaluation code repository. Thanks for their wonderful work.
+VLMEvalKit serves as foundation for our evaluation code repository. Thanks for their wonderful work!
 
 ## Citation
 
 If you find our paper and code useful in your research, please consider giving us a star and citing our work :)
 ```
+@article{wu2025indoor,
+    title={From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs},
+    author={Mingrui Wu and Zhaozhi Wang and Fangjinhua Wang and Jiaolong Yang and Marc Pollefeys and Tong Zhang},
+    journal={arXiv preprint arXiv:2512.19683},
+    year={2025}}
 ```
