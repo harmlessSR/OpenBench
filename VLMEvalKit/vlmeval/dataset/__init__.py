@@ -101,7 +101,7 @@ from .macbench import MaCBench
 from .sarena_mini import SArena_MINI
 from .uni_svg import UniSVG
 
-from .OpenBench.openbench import OpenBench
+from .OSIBench.osibench import OSIBench
 
 
 class ConcatDataset(ImageBaseDataset):
@@ -245,7 +245,7 @@ VIDEO_DATASET = [
     Video_MMLU_CAP, Video_MMLU_QA,
     Video_Holmes, VCRBench, CGAVCounting,
     EgoExoBench_MCQ, DREAM, VideoTT, VideoMMMU, VSIBench,
-    OpenBench
+    OSIBench
 
 ]
 

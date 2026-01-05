@@ -15,11 +15,11 @@ from .utils import (
     calculate_metric_score_with_relative_error_consider_zero,
 )
 
-class OpenBench(VideoBaseDataset):
+class OSIBench(VideoBaseDataset):
     TYPE = 'VQA'
-    DEFAULT_REPO_ID = "HarmlessSR07/OpenBench"   
+    DEFAULT_REPO_ID = "HarmlessSR07/OSI-Bench"   
 
-    def __init__(self, data_path, dataset='OpenBench', nframe=32, fps=-1, download=False, **kwargs):
+    def __init__(self, data_path, dataset='OSIBench', nframe=32, fps=-1, download=False, **kwargs):
         self.data_path = data_path
         self.dataset_name = dataset
         self.download = download
@@ -59,7 +59,7 @@ class OpenBench(VideoBaseDataset):
 
     @classmethod
     def supported_datasets(cls):
-        return ['OpenBench']
+        return ['OSI-Bench']
 
     def prepare_dataset(self):
         parquet_path = os.path.join(self.data_path, 'data.parquet')
@@ -73,7 +73,7 @@ class OpenBench(VideoBaseDataset):
                 f"Dataset not found at {self.data_path}. Set `download=True` in config to download."
             )
 
-        print(f"[OpenBench] Syncing data from {self.repo_id}...")
+        print(f"[OSI-Bench] Syncing data from {self.repo_id}...")
 
         download_path = snapshot_download(
                 repo_id=self.repo_id,

@@ -3,10 +3,10 @@
         "Qwen2.5-VL-3B-Instruct": {}
     },
     "data": {
-        "OpenBench": {
-            "class": "OpenBench",
-            "data_path": "./OpenBench_HF_Cache_full",
-            "dataset": "OpenBench",
+        "OSIBench": {
+            "class": "OSIBench",
+            "data_path": "./OSIBench_HF_Cache_full",
+            "dataset": "OSIBench",
             "nframe": 32,
             "download": true,
             "force_unzip": false

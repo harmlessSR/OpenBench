@@ -3,13 +3,13 @@
 <h1><br>From Indoor to Open World:<br>Revealing the Spatial Reasoning Gap in MLLMs</br></h1>
 
 <a href="https://arxiv.org/abs/2512.19683" target="_blank">
-    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-OpenBench-red?logo=arxiv" height="20" />
+    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-OSI--Bench-red?logo=arxiv" height="20" />
 </a>
-<a href="https://harmlesssr.github.io/openbench/" target="_blank">
-    <img alt="Website" src="https://img.shields.io/badge/🌎_Project Page-OpenBench-blue.svg" height="20" />
+<a href="https://mingrui-wu.github.io/osi-bench/" target="_blank">
+    <img alt="Website" src="https://img.shields.io/badge/🌎_Project Page-OSI--Bench-blue.svg" height="20" />
 </a>
-<a href="https://huggingface.co/datasets/HarmlessSR07/OpenBench" target="_blank">
-    <img alt="HF Dataset: OpenBench" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Benchmark-OpenBench-ffc107?color=ffc107&logoColor=white" height="20" />
+<a href="https://huggingface.co/datasets/HarmlessSR07/OSI-Bench" target="_blank">
+    <img alt="HF Dataset: OSI-Bench" src="https://img.shields.io/badge/%F0%9F%A4%97%20_Benchmark-OSI--Bench-ffc107?color=ffc107&logoColor=white" height="20" />
 </a>
 
 <div>
@@ -36,7 +36,7 @@
 <img src="static/teaser.png" width="80%"/>
 </div>
 
-- **A benchmark and dataset for spatial intelligence**. We introduce OpenBench, a metrically precise outdoor benchmark built from multi-sensor pedestrian-view data, with 8,736 question-answer pairs.
+- **A benchmark and dataset for spatial intelligence**. We introduce OSI-Bench(Open Spatial Intelligence Bench), a metrically precise outdoor benchmark built from multi-sensor pedestrian-view data, with 8,736 question-answer pairs.
 - **Comprehensive evaluation of state-of-the-art (SoTA) MLLMs.** We conduct an extensive analysis of leading open- and closed-source models, offering the first unified assessment of spatial reasoning across static, relational, and dynamic tasks under real-world conditions.
 - **Current spatial intelligence is fragile.** Our findings reveal that existing MLLMs lack generalizable spatial intelligence—their gains on indoor benchmarks do not transfer to open-world settings.
 
@@ -44,33 +44,33 @@
 ## News
 
 - `2025-12` : Our paper 'From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs' is released on <a href="https://arxiv.org/abs/2512.19683">Arxiv</a>!
-- `2025-12` : We released OpenBench and corresponding evaluation code!
+- `2025-12` : We released OSI-Bench and corresponding evaluation code!
 
-## OpenBench
+## OSI-Bench
 
-We introduce OpenBench, a metrically precise outdoor benchmark built from multi-sensor pedestrian-view data, with 8,736 question-answer pairs.
+We introduce OSI-Bench, a metrically precise outdoor benchmark built from multi-sensor pedestrian-view data, with 8,736 question-answer pairs.
 
-The tasks in OpenBench are structured as a hierarchy of three tiers, representing a progression of spatial reasoning capabilities, covering static, relational, and dynamic tasks under real-world conditions.
+The tasks in OSI-Bench are structured as a hierarchy of three tiers, representing a progression of spatial reasoning capabilities, covering static, relational, and dynamic tasks under real-world conditions.
 
 <div align="center" style="font-family: charter;">
 <img src="static/tasks.png" width="90%"/>
 </div>
 
 
-## Evaluation on OpenBench
+## Evaluation on OSI-Bench
 
-We utilize **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)**, an open-source evaluation toolkit for large vision-language models (LVLMs), to conduct evaluations on OpenBench. Our codebase is adapted to support the metrics and data format of OpenBench.
+We utilize **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)**, an open-source evaluation toolkit for large vision-language models (LVLMs), to conduct evaluations on OSI-Bench. Our codebase is adapted to support the metrics and data format of OSI-Bench.
 
 ### 1. Installation
 
 First, clone our repository and set up the environment.
 
 ```bash
-git clone https://github.com/harmlessSR/OpenBench.git
-cd OpenBench/VLMEvalKit
+git clone https://github.com/mingrui-wu/OSI-Bench.git
+cd OSI-Bench/VLMEvalKit
 
-conda create -n openbench python=3.10
-conda activate openbench
+conda create -n osibench python=3.10
+conda activate osibench
 
 pip install -e .
 ```
@@ -98,20 +98,20 @@ Our evaluation code will automatically download and uncompress the full benchmar
 
 **Storage Requirement:** The full dataset (video + metadata) requires at least **160GB** of free disk space. Please ensure your target directory has sufficient storage.
 
-You can specify the download location by modifying the `config/openbench.json` file. By default, it will check if the data exists; if not, it will start downloading.
+You can specify the download location by modifying the `config/osibench.json` file. By default, it will check if the data exists; if not, it will start downloading.
 
 ```json
-// config/openbench.json
+// config/osibench.json
 {
     "model": {
         "Qwen2.5-VL-3B-Instruct": {}
     },
     "data": {
-        "OpenBench": {
-            "class": "OpenBench",
+        "OSI-Bench": {
+            "class": "OSIBench",
             // MODIFY THIS PATH to your preferred storage directory
-            "data_path": "./OpenBench_HF_Cache_full",
-            "dataset": "OpenBench",
+            "data_path": "./OSIBench_HF_Cache_full",
+            "dataset": "OSIBench",
             "nframe": 32,
             "download": true,      
             "force_unzip": false  
@@ -125,11 +125,11 @@ You can specify the download location by modifying the `config/openbench.json` f
 To start the evaluation, simply run the following command with your configuration file:
 
 ```bash
-python run.py --config config/openbench.json
+python run.py --config config/osibench.json
 ```
 
 The script will:
-1.  Check `data_path` for the OpenBench dataset.
+1.  Check `data_path` for the OSI-Bench dataset.
 2.  Automatically download and unzip the data if it's missing (and `download` is set to `true`).
 3.  Load the model specified in the config.
 4.  Run inference and generate results.
